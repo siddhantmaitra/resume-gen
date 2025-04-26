@@ -1,0 +1,73 @@
+[personal]
+name = "John Doe"
+email = "contact@jdoe.com"
+phone = "+91 134534657687"
+linkedin = "https://linkedin.com/in/jdoe"
+github = "https://github.com/jdoe"
+site = "https://johndoe.dev"
+location = "Hyderabad, India"
+
+[work_experience]
+[[work_experience.jobs]]
+title = "Sr Programmer "
+company = "Some Company"
+location = "Hyderabad, India"
+start_date = "Sep 2023"
+end_date = "Present"
+points = [
+    "Developed and maintained web applications using React and Node.jsaaaaaaaaaaaaaaaaaaaaaaaaaaa aaa fgedg a aaaaaa   aa.",
+    "Improved application performance by 25% through code optimization.",
+    "Collaborated with cross-functional teams to deliver projects on time."
+]
+[[work_experience.jobs]]
+title = "Mid Programmer"
+company = "ABC Inc"
+location = "Hyderabad, India"
+start_date = "Sep 2023"
+end_date = "Jan 2025"
+points = [
+    "Developed and maintained web applications using React and Node.js.",
+    "Improved application performance by 25% through code optimization.",
+    "Collaborated with cross-functional teams to deliver projects on time."
+]
+[[work_experience.jobs]]
+title = "JR Programmer"
+company = "XYZ Inc"
+location = "Hyderabad, India"
+start_date = "Sep 2023"
+end_date = "Dec 2024"
+points = [
+    "Developed and maintained web applications using React and Node.js.",
+    "Improved application performance by 25% through code optimization.",
+    "Collaborated with cross-functional teams to deliver projects on time."
+]
+
+
+[projects]
+[[projects.list]]
+name = "Portfolio Website"
+points = [
+    "Designed and developed a personal portfolio website using HTML, CSS, and JavaScript."
+]
+url = "https://johndoe.dev"
+
+[[projects.list]]
+name = "Task Manager App"
+points = [
+    "Built a task management application with React and Firebase for real-time data synchronization."
+]
+url = "https://github.com/johndoe/task-manager"
+
+[skills]
+programming_languages = ["Python", "JavaScript", "Java", "C++"]
+frameworks = ["React", "Node.js", "Django", "Flask"]
+tools = ["Git", "Docker", "Kubernetes", "Jenkins"]
+soft_skills = ["Teamwork", "Problem-solving", "Communication"]
+
+[education]
+[[education.degrees]]
+degree = "Bachelor of Science in Computer Science"
+institution = "University of Example"
+location = "Example City, EX"
+start_date = "2014-09"
+end_date = "2018-05"

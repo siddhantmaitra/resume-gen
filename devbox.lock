@@ -1,0 +1,104 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "resolved": "github:NixOS/nixpkgs/507b63021ada5fee621b6ca371c4fca9ca46f52c?lastModified=1745377448&narHash=sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA%3D"
+    },
+    "typst-live@latest": {
+      "last_modified": "2025-03-30T07:43:48Z",
+      "resolved": "github:NixOS/nixpkgs/63158b9cbb6ec93d26255871c447b0f01da81619#typst-live",
+      "source": "devbox-search",
+      "version": "0.8.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lx086pgi4ll9ygns6bzv66cml7np5vj8-typst-live-0.8.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/lx086pgi4ll9ygns6bzv66cml7np5vj8-typst-live-0.8.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pp706swl1nrz9r1ga47chw20hya65smm-typst-live-0.8.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pp706swl1nrz9r1ga47chw20hya65smm-typst-live-0.8.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/a579m40rm4lywdwbkp34d4a1p6kvz1sg-typst-live-0.8.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/a579m40rm4lywdwbkp34d4a1p6kvz1sg-typst-live-0.8.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0l0wc5k1chyln0vhgr64aahlgjz5fzdn-typst-live-0.8.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/0l0wc5k1chyln0vhgr64aahlgjz5fzdn-typst-live-0.8.0"
+        }
+      }
+    },
+    "typst@latest": {
+      "last_modified": "2025-03-27T11:50:31Z",
+      "resolved": "github:NixOS/nixpkgs/6c5963357f3c1c840201eda129a99d455074db04#typst",
+      "source": "devbox-search",
+      "version": "0.13.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dq9w5jfvlfafwyab6am0i30w3l7ca57p-typst-0.13.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/dq9w5jfvlfafwyab6am0i30w3l7ca57p-typst-0.13.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9gb96i1s2wyqcbr2f4g8n9ka4pmvabzg-typst-0.13.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9gb96i1s2wyqcbr2f4g8n9ka4pmvabzg-typst-0.13.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vgcc369y222i60l638h90bz13l8x6698-typst-0.13.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vgcc369y222i60l638h90bz13l8x6698-typst-0.13.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/k4hvsxlrplv4j63vgp9j9yr6x0r0r3qa-typst-0.13.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/k4hvsxlrplv4j63vgp9j9yr6x0r0r3qa-typst-0.13.1"
+        }
+      }
+    }
+  }
+}
