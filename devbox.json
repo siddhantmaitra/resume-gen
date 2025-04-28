@@ -2,7 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.14.0/.schema/devbox.schema.json",
   "packages": [
     "typst@latest",
-    "typst-live@latest"
+    "typst-live@latest",
+    "typstyle@latest"
   ],
   "shell": {
     "init_hook": [
@@ -10,7 +11,11 @@
     ],
     "scripts": {
       "server": "typst-live src/main.typ",
-      "build": ["mkdir -p output","typst compile src/main.typ output/resume-siddhant-maitra.pdf"]
+      "fmt-all": "typstyle format-all src",
+      "build": [
+        "mkdir -p output",
+        "typst compile src/main.typ output/resume-siddhant-maitra.pdf"
+      ]
     }
   }
 }
