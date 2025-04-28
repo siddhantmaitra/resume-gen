@@ -4,14 +4,16 @@ I got tired of fixing format issues of my `resume.odt` file everytime edits were
 
 This is a fork of [basic-resume](https://typst.app/universe/package/basic-resume). Making few changes to be ideal for personal use-case.
 
-Modifications to be done:
+Modifications to be/can be done:
 - [x] Update few header links to be hyperlinks instead of direct ones (eg: github, linkedin)
 - [x] Add optional display of GPA
-- [x] Have a `.toml` file for data for ease of update
-- [ ] Update functions to be compatible with using`.toml` data
+- [x] Have a `.toml` file for easily updating personal info
+- [ ] Update all functions to be compatible with using`.toml` data
 - [ ] Tweak design to taste
 - [ ] Add provision of including multiple links for each project instead of 1 URL
 - [ ] Dynamically change layout with vertical list of links when introducing image?
+- [ ] Make few design choices (eg: which lines to italicize) programmatic (like usage of `consistent` parameter)
+- [ ] Add more options for header links
 
 
 ## Local Setup
