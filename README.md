@@ -12,8 +12,7 @@ Modifications to be/can be done:
 - [ ] Tweak design to taste
 - [ ] Add provision of including multiple links for each project instead of 1 URL
 - [ ] Dynamically change layout with vertical list of links when introducing image?
-- [ ] Make few design choices (eg: which lines to italicize) programmatic (like usage of `consistent` parameter)
-- [ ] Add more options for header links
+- [x] Make few design choices (eg: which lines to italicize) programmatic (like usage of `consistent` parameter)
 
 
 ## Local Setup
