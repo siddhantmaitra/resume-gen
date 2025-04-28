@@ -3,8 +3,10 @@
 #let details = toml("data.toml")
 
 #let work_exps = details.work_experience.jobs
-#let personal = details.personal
+#let personal = details.personal  
 #let projects = details.projects
+#let educations = details.education.degrees
+#let skills = details.skills
 
 #show: lib.resume.with(
   author: personal.name,
@@ -23,17 +25,6 @@
   personal-info-position: left,
 )
 
-== Education
-
-#lib.edu(
-  institution: "Harvey Mudd College",
-  location: "Claremont, CA",
-  gpa: "9.33/10 GPA",
-  dates: lib.dates-helper(start-date: "Aug 2023", end-date: "May 2027"),
-  degree: "Bachelor's of Technology, Computer Science and Engineering",
-  // consistent: true
-)
-
 == Work Experience
 #for exp in work_exps [
 #lib.work(
@@ -42,5 +33,17 @@
   location:exp.location,
   dates:lib.dates-helper(start-date: exp.start_date, end-date: exp.end_date),
   body:(exp.points)
+)
+]
+== Education
+#for degree in educations [
+  #lib.edu(
+  institution:degree.institution,
+  location: degree.location,
+  gpa: degree.gpa,
+  dates: lib.dates-helper(start-date: degree.start_date, end-date: degree.end_date),
+  degree: degree.degree,
+  consistent: true,
+  italics: true,
 )
 ]
