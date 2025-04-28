@@ -9,9 +9,8 @@
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
+      "server": "typst-live src/main.typ",
+      "build": ["mkdir -p output","typst compile src/main.typ output/resume-siddhant-maitra.pdf"]
     }
   }
 }
