@@ -16,7 +16,6 @@
   paper: "a4",
   body,
 ) = {
-
   // Sets document metadata
   set document(author: author, title: author)
 
@@ -27,12 +26,12 @@
     size: 10pt,
     lang: "en",
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
-    ligatures: false
+    ligatures: false,
   )
 
   // Reccomended to have 0.5in margin on all sides
   set page(
-    margin: (0.5in),
+    margin: 0.5in,
     paper: paper,
   )
 
@@ -47,13 +46,9 @@
   ]
 
   // Accent Color Styling
-  show heading: set text(
-    fill: rgb(accent-color),
-  )
+  show heading: set text(fill: rgb(accent-color))
 
-  show link: set text(
-    fill: rgb(accent-color),
-  )
+  show link: set text(fill: rgb(accent-color))
 
   // Name will be aligned left, bold and big
   show heading.where(level: 1): it => [
@@ -68,17 +63,18 @@
   // Level 1 Heading
   [= #(author)]
 
+
   // Personal Info Helper
-  let contact-item(value, prefix: "", link-type: "",link-text: "") = {
+  let contact-item(value, link-type: "", link-text: "") = {
     if value != "" {
       if link-type != "" {
-         link(link-type + value)[#{
-          if link-text != "" {
-            link-text
-          }else{
-            prefix+value
-          }
-        }]
+        link(link-type + value)[#{
+            if link-text != "" {
+              link-text
+            } else {
+              value
+            }
+          }]
       } else {
         value
       }
@@ -96,13 +92,10 @@
           contact-item(phone),
           contact-item(email, link-type: "mailto:"),
           contact-item(personal-site, link-type: "https://"),
-          contact-item(github, link-type: "https://",link-text: "GitHub"),
-          contact-item(linkedin, link-type: "https://",link-text: "Linkedin"),
-
-          // contact-item(orcid, prefix: [#orcid-icon(color: rgb("#AECD54"))orcid.org/], link-type: "https://orcid.org/"),
+          contact-item(github, link-type: "https://", link-text: "GitHub"),
+          contact-item(linkedin, link-type: "https://", link-text: "Linkedin"),
         )
         items.filter(x => x != none).join("  |  ")
-        // items.filter(x => x != none)
       }
     ],
   )
@@ -153,41 +146,38 @@
   location: "",
   // Makes dates on upper right like rest of components
   consistent: false,
+  emphDegree: true,
 ) = {
+  let eduData = (top-left: "", top-right: "", bottom-left: "", bottom-right: "")
+
+  eduData.top-left = strong(institution)
+
+  eduData.bottom-left = if emphDegree {
+    emph(degree) + (" " + strong(gpa))
+  } else {
+    degree + " " + strong(gpa)
+  }
+
   if consistent {
     // edu-constant style (dates top-right, location bottom-right)
-    generic-two-by-two(
-      top-left: strong(institution),
-      top-right: dates,
-      bottom-left: emph(degree) + strong(gpa),
-      bottom-right: emph(location),
-    )
+    eduData.top-right = dates
+    // eduData.bottom-right =  if(italics){emph(location)}else{location}
+    eduData.bottom-right = emph(location)
   } else {
     // original edu style (location top-right, dates bottom-right)
-    generic-two-by-two(
-      top-left: strong(institution),
-      top-right: location,
-      bottom-left: emph(degree) + " "+strong(gpa),
-      bottom-right: emph(dates),
-    )
+    // eduData.top-right =  if(italics){emph(location)}else{location}
+    eduData.top-right = emph(location)
+    eduData.bottom-right = dates
   }
+  generic-two-by-two(
+    top-left: eduData.top-left,
+    top-right: eduData.top-right,
+    bottom-left: eduData.bottom-left,
+    bottom-right: eduData.bottom-right,
+  )
 }
 
-// #let work(
-//   title: "",
-//   dates: "",
-//   company: "",
-//   location: "",
-// ) = {
-//   generic-two-by-two(
-//     top-left: strong(title),
-//     top-right: dates,
-//     bottom-left: company,
-//     bottom-right: emph(location),
-//   )
-// }
-
-#let work(title:"", company:"", location:"", dates:"", body:[]) = {
+#let work(title: "", company: "", location: "", dates: "", body: []) = {
   generic-two-by-two(
     top-left: strong(title),
     top-right: dates,
@@ -199,7 +189,6 @@
     v(-0.4em)
     set par(leading: 0.6em)
     set list(indent: 0.5em)
-    // body.map(item => "- "+item+"sss")
     for item in body [
       - #item
     ]
@@ -218,7 +207,7 @@
       if role == "" {
         [*#name* #if url != "" and dates != "" [ (#link("https://" + url)[#url])]]
       } else {
-        [*#role*, #name #if url != "" and dates != ""  [ (#link("https://" + url)[#url])]]
+        [*#role*, #name #if url != "" and dates != "" [ (#link("https://" + url)[#url])]]
       }
     },
     right: {
