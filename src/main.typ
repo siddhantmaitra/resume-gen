@@ -7,6 +7,7 @@
 #let projects = details.projects
 #let educations = details.education.degrees
 #let skills = details.skills
+#let projects = details.projects.list
 
 #show: lib.resume.with(
   author: personal.name,
@@ -35,6 +36,19 @@
     body: (exp.points),
   )
 ]
+
+== Projects
+#for project in projects [
+  #lib.project(
+    name: project.name,
+    role: project.role,
+    dates: lib.dates-helper(start-date: project.start_date, end-date: project.end_date),
+    demo-url: project.demo_url,
+    code-url: project.code_url,
+    body: project.points
+  )
+]
+
 == Education
 #for degree in educations [
   #lib.edu(

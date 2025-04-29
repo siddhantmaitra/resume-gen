@@ -199,26 +199,33 @@
 #let project(
   role: "",
   name: "",
-  url: "",
+  code-url: "",
+  demo-url: "",
   dates: "",
+  body:[],
 ) = {
-  generic-one-by-two(
-    left: {
-      if role == "" {
-        [*#name* #if url != "" and dates != "" [ (#link("https://" + url)[#url])]]
-      } else {
-        [*#role*, #name #if url != "" and dates != "" [ (#link("https://" + url)[#url])]]
-      }
-    },
-    right: {
-      if dates == "" and url != "" {
-        link("https://" + url)[#url]
-      } else {
-        dates
-      }
-    },
-  )
+  let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
+  if code-url != "" {
+    project-header = project-header + [ (#link(code-url)[Code])]
+  }
+  if demo-url != "" {
+    project-header = project-header + [ (#link(demo-url)[Demo])]
+  }
+  generic-one-by-two(left: { project-header }, right: { dates })
+  
+  v(-0.2em)
+  if body != [] {
+    v(-0.4em)
+    set par(leading: 0.6em)
+    set list(indent: 0.5em)
+    for item in body [
+      - #item
+    ]
+  }
 }
+
+
+
 
 #let certificates(
   name: "",
