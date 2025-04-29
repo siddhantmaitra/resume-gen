@@ -45,10 +45,7 @@
   #lib.project(
     name: project.name,
     role: project.role,
-    dates: lib.dates-helper(
-      start-date: project.start_date,
-      end-date: project.end_date,
-    ),
+    tech-stack: project.tech_stack,
     demo-url: project.demo_url,
     code-url: project.code_url,
     body: project.points,

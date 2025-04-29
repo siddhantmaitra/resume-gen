@@ -209,17 +209,17 @@
   name: "",
   code-url: "",
   demo-url: "",
-  dates: "",
+  tech-stack: [],
   body: [],
 ) = {
   let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
   if code-url != "" {
-    project-header = project-header + [ (#link(code-url)[Code])]
+    project-header = project-header + [ [#link(code-url)[Code]]]
   }
   if demo-url != "" {
-    project-header = project-header + [ (#link(demo-url)[Demo])]
+    project-header = project-header + [ [#link(demo-url)[Demo]]]
   }
-  generic-one-by-two(left: { project-header }, right: { dates })
+  generic-one-by-two(left: { project-header }, right: { emph(tech-stack.join(", ")) })
 
   v(-0.2em)
   if body != [] {
