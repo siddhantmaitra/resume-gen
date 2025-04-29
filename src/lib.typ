@@ -15,9 +15,10 @@
   font: "New Computer Modern",
   paper: "a4",
   body,
+  footer: "",
 ) = {
   // Sets document metadata
-  set document(author: author, title: author)
+  set document(author: author, title: "Resume - " + author)
 
   // Document-wide formatting, including font and margins
   set text(
@@ -33,8 +34,15 @@
   set page(
     margin: 0.5in,
     paper: paper,
-  )
+    footer: [
+      #if footer != "" {
+        set align(right)
+        set text(8pt)
+        footer
+      }
 
+    ],
+  )
   // Link styles
   show link: underline
 
@@ -202,7 +210,7 @@
   code-url: "",
   demo-url: "",
   dates: "",
-  body:[],
+  body: [],
 ) = {
   let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
   if code-url != "" {
@@ -212,7 +220,7 @@
     project-header = project-header + [ (#link(demo-url)[Demo])]
   }
   generic-one-by-two(left: { project-header }, right: { dates })
-  
+
   v(-0.2em)
   if body != [] {
     v(-0.4em)

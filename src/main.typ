@@ -9,6 +9,8 @@
 #let skills = details.skills
 #let projects = details.projects.list
 
+#let footer = [Generated on: #datetime.today().display()]
+
 #show: lib.resume.with(
   author: personal.name,
   email: personal.email,
@@ -24,6 +26,7 @@
   paper: "a4",
   author-position: left,
   personal-info-position: left,
+  footer: footer,
 )
 
 == Work Experience
@@ -42,10 +45,13 @@
   #lib.project(
     name: project.name,
     role: project.role,
-    dates: lib.dates-helper(start-date: project.start_date, end-date: project.end_date),
+    dates: lib.dates-helper(
+      start-date: project.start_date,
+      end-date: project.end_date,
+    ),
     demo-url: project.demo_url,
     code-url: project.code_url,
-    body: project.points
+    body: project.points,
   )
 ]
 
