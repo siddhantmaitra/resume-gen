@@ -49,6 +49,12 @@
   )
 ]
 
+== Skills
+*Programming Languages*: #skills.programming_languages.join(", ")\
+*Frameworks*: #skills.frameworks.join(", ")\
+*Tools*: #skills.tools.join(", ")\
+// *Languages*: #skills.languages.join(", ")
+
 == Education
 #for degree in educations [
   #lib.edu(
