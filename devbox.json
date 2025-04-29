@@ -7,7 +7,8 @@
   ],
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      "echo 'Welcome to devbox!' > /dev/null",
+      "unset SOURCE_DATE_EPOCH"
     ],
     "scripts": {
       "server": "typst-live src/main.typ",
