@@ -198,7 +198,7 @@
     set par(leading: 0.6em)
     set list(indent: 0.5em)
     for item in body [
-      - #item
+      - #eval(item,mode: "markup")
     ]
   }
 }
@@ -227,7 +227,7 @@
     set par(leading: 0.6em)
     set list(indent: 0.5em)
     for item in body [
-      - #item
+       - #eval(item,mode: "markup")
     ]
   }
 }
