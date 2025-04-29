@@ -13,6 +13,7 @@ Modifications to be/can be done:
 - [x] Add provision of including multiple links for each project instead of 1 URL
 - [ ] Dynamically change layout with vertical list of links when introducing image?
 - [x] Make few design choices (eg: which lines to italicize) programmatic (like usage of `consistent` parameter)
+- [x] Add tech-stack of a project to right of the project name
 
 
 ## Local Setup
