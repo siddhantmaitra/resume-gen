@@ -49,6 +49,7 @@ name = "Portfolio Website"
 role = ""
 start_date = "Jan 2023"
 end_date = "May 2024"
+tech_stack = ["React", "Firebase", "Material-UI", "Node.js", "Express"]
 points = [
     "Designed and developed a personal portfolio website using HTML, CSS, and JavaScript.",
     "Maintain open-source scheduler used by 7000+ users at the Claremont",
@@ -62,6 +63,7 @@ name = "Task Manager App"
 role = ""
 start_date = ""
 end_date = ""
+tech_stack = ["React", "Firebase", "Material-UI", "Node.js", "Express"]
 points = [
     "Built a task management application with React and Firebase for real-time data synchronization.",
     "Implemented user authentication and authorization using Firebase Authentication.",
