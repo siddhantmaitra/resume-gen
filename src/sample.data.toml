@@ -46,17 +46,29 @@ points = [
 [projects]
 [[projects.list]]
 name = "Portfolio Website"
+role = ""
+start_date = "Jan 2023"
+end_date = "May 2024"
 points = [
-    "Designed and developed a personal portfolio website using HTML, CSS, and JavaScript."
+    "Designed and developed a personal portfolio website using HTML, CSS, and JavaScript.",
+    "Maintain open-source scheduler used by 7000+ users at the Claremont",
+    "Implemented responsive design for optimal viewing on various devices.",
 ]
-url = "https://johndoe.dev"
+code_url = "https://www.github.com"
+demo_url = "https://johndoe.dev"
 
 [[projects.list]]
 name = "Task Manager App"
+role = ""
+start_date = ""
+end_date = ""
 points = [
-    "Built a task management application with React and Firebase for real-time data synchronization."
+    "Built a task management application with React and Firebase for real-time data synchronization.",
+    "Implemented user authentication and authorization using Firebase Authentication.",
+    "Designed a user-friendly interface with Material-UI for better user experience.",
 ]
-url = "https://github.com/johndoe/task-manager"
+code_url = "https://github.com/johndoe/task-manager"
+demo_url = ""
 
 [skills]
 programming_languages = ["Python", "JavaScript", "Java", "C++"]
@@ -71,3 +83,4 @@ institution = "University of Example"
 location = "Example City, EX"
 start_date = "2014-09"
 end_date = "2018-05"
+gpa = ""
