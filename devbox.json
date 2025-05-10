@@ -15,7 +15,9 @@
       "fmt-all": "typstyle format-all src",
       "build": [
         "mkdir -p output",
-        "typst compile src/main.typ output/resume-siddhant-maitra.pdf"
+        "commit=$(git log -1 --format=%h)",
+        "buildDate=$(date +%y-%m-%d)",
+        "typst compile src/main.typ output/resume-${1}-${commit}-${buildDate}.pdf"
       ]
     }
   }
