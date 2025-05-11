@@ -214,13 +214,18 @@
   body: [],
 ) = {
   let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
+  let right
   if code-url != "" {
-    project-header = project-header + [ [#link(code-url)[Code]]]
+    // project-header = project-header + [ [#link(code-url)[Code]]]
+    right = right + [ [#link(code-url)[Code]]]
   }
   if demo-url != "" {
-    project-header = project-header + [ [#link(demo-url)[Demo]]]
+    // project-header = project-header + [ [#link(demo-url)[Demo]]]
+    right = right + [ [#link(demo-url)[Demo]]]
   }
-  generic-one-by-two(left: { project-header }, right: { emph(tech-stack.join(", ")) })
+  generic-one-by-two(left: { project-header }, right: {right
+    //emph(tech-stack.join(", "))
+    })
 
   v(-0.2em)
   if body != [] {
@@ -230,6 +235,7 @@
     for item in body [
        - #eval(item,mode: "markup")
     ]
+      [-  Tech Used: *#tech-stack.join(", ")*]
   }
 }
 
