@@ -1,6 +1,6 @@
 #import "lib.typ" as lib
 
-#let details = toml("data.toml")
+#let details = toml("../data/data.toml")
 
 #let work_exps = details.work_experience.jobs
 #let personal = details.personal
@@ -57,6 +57,7 @@
 *Programming Languages*: #skills.programming_languages.join(", ")\
 *Frameworks*: #skills.frameworks.join(", ")\
 *Tools*: #skills.tools.join(", ")\
+*Platforms*: #skills.platforms.join(", ")
 // *Languages*: #skills.languages.join(", ")
 
 == Education
