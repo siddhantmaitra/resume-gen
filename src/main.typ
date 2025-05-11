@@ -21,11 +21,12 @@
   location: personal.location,
   accent-color: "#101e70",
   // accent-color: "#26429d",
-  font: "New Computer Modern",
-  // font: "Libertinus Serif",
+  font: "IBM Plex Serif",
+  // font: "New Computer Modern",
+  font-size: 12pt,
   paper: "a4",
-  author-position: left,
-  personal-info-position: left,
+  header-position: left,
+  name-size: 22pt,
   footer: footer,
 )
 

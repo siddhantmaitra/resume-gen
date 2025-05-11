@@ -1,8 +1,7 @@
 
 #let resume(
   author: "",
-  author-position: left,
-  personal-info-position: left,
+  header-position: left,
   pronouns: "",
   location: "",
   email: "",
@@ -13,9 +12,11 @@
   orcid: "",
   accent-color: "#000000",
   font: "New Computer Modern",
-  paper: "a4",
+  paper: "us-letter",
   body,
   footer: "",
+  font-size: 12pt,
+  name-size: 25pt,
 ) = {
   // Sets document metadata
   set document(author: author, title: "Resume - " + author)
@@ -24,7 +25,7 @@
   set text(
     // LaTeX style font
     font: font,
-    size: 10pt,
+    size: font-size,
     lang: "en",
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
     ligatures: false,
@@ -60,10 +61,10 @@
 
   // Name will be aligned left, bold and big
   show heading.where(level: 1): it => [
-    #set align(author-position)
+    #set align(header-position)
     #set text(
       weight: 700,
-      size: 20pt,
+      size: name-size,
     )
     #pad(it.body)
   ]
@@ -92,7 +93,7 @@
   // Personal Info
   pad(
     top: 0.25em,
-    align(personal-info-position)[
+    align(header-position)[
       #{
         let items = (
           contact-item(pronouns),
