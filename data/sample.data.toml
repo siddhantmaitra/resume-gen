@@ -1,10 +1,10 @@
 [personal]
 name = "John Doe"
 email = "contact@jdoe.com"
-phone = "+91 134534657687"
+phone = "+91 1345346576"
 linkedin = "https://linkedin.com/in/jdoe"
 github = "https://github.com/jdoe"
-site = "https://johndoe.dev"
+site = "johndoe.dev"
 location = "Hyderabad, India"
 
 [work_experience]
@@ -15,7 +15,7 @@ location = "Hyderabad, India"
 start_date = "Sep 2023"
 end_date = "Present"
 points = [
-    "Developed and maintained web applications using React and Node.jsaaaaaaaaaaaaaaaaaaaaaaaaaaa aaa fgedg a aaaaaa   aa.",
+    "Developed and maintained web applications using React and Node.js.",
     "Improved application performance by 25% through code optimization.",
     "Collaborated with cross-functional teams to deliver projects on time."
 ]
@@ -73,10 +73,36 @@ code_url = "https://github.com/johndoe/task-manager"
 demo_url = ""
 
 [skills]
-programming_languages = ["Python", "JavaScript", "Java", "C++"]
-frameworks = ["React", "Node.js", "Django", "Flask"]
-tools = ["Git", "Docker", "Kubernetes", "Jenkins"]
-soft_skills = ["Teamwork", "Problem-solving", "Communication"]
+programming_languages = [
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "Go",
+    "Bash",
+]
+frameworks = ["Node.js", "Express.js", "Spring Boot", "Spring WebFlux"]
+backend = [
+    "Spring Boot",
+    "Spring WebFlux",
+    "Node.js",
+    "Express",
+    "Gin",
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+]
+frontend = ["HTML", "CSS", "React", "Next.js", "Astro", "TailwindCSS"]
+tools = [
+    "Git",
+    "Docker",
+    "GitHub Actions",
+    "Gitlab CI/CD",
+    "Ansible",
+    "Terraform",
+    "Maven",
+]
+platforms = ["Linux", "AWS", "Cloudflare", "Hetzner"]
 
 [education]
 [[education.degrees]]
