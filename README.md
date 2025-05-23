@@ -2,7 +2,7 @@ Generating a resume with typst
 
 I got tired of fixing format issues of my `resume.odt` file everytime edits were made.
 
-This is a fork of [basic-resume](https://typst.app/universe/package/basic-resume). Making few changes to be ideal for personal use-case.
+This is a fork of [basic-resume](https://typst.app/universe/package/basic-resume). Making few changes to be ideal for personal use.
 
 Modifications to be/can be done:
 - [x] Update few header links to be hyperlinks instead of direct ones (eg: github, linkedin)
@@ -20,5 +20,5 @@ Modifications to be/can be done:
 1. Ensure `devbox` and `nix` is installed
 2. Run `devbox shell` inside project root
 3. Run `devbox run server` for live-reload edits
-4. Run `devbox run build` for creating builds in `output` directory
+4. Run `devbox run build` for creating builds in `output` directory.
 5. Run `devbox run fmt-all` for formatting `src/*.typ` files

@@ -11,7 +11,7 @@
       "unset SOURCE_DATE_EPOCH"
     ],
     "scripts": {
-      "server": "typst-live src/main.typ",
+      "server": "typst-live src/main.typ '--' --root .",
       "fmt-all": "typstyle format-all src",
       "build": [
         "mkdir -p output",
