@@ -17,13 +17,13 @@
   footer: "",
   font-size: 12pt,
   name-size: 25pt,
+  contacts-size: 12pt,
 ) = {
   // Sets document metadata
   set document(author: author, title: "Resume - " + author)
 
   // Document-wide formatting, including font and margins
   set text(
-    // LaTeX style font
     font: font,
     size: font-size,
     lang: "en",
@@ -51,7 +51,7 @@
   // Small caps for section titles
   show heading.where(level: 2): it => [
     #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
-    #line(length: 100%, stroke: 1pt)
+    #line(length: 100%, stroke: (paint:gray ,thickness: 1pt))
   ]
 
   // Accent Color Styling
@@ -63,7 +63,7 @@
   show heading.where(level: 1): it => [
     #set align(header-position)
     #set text(
-      weight: 700,
+      weight: 600,
       size: name-size,
     )
     #pad(it.body)
@@ -94,6 +94,7 @@
   pad(
     top: 0.25em,
     align(header-position)[
+      #set text(size: contacts-size)
       #{
         let items = (
           contact-item(pronouns),
@@ -156,7 +157,9 @@
   // Makes dates on upper right like rest of components
   consistent: false,
   emphDegree: true,
+  font-size: 12pt,
 ) = {
+  set text(font-size)
   let eduData = (top-left: "", top-right: "", bottom-left: "", bottom-right: "")
 
   eduData.top-left = strong(institution)
@@ -186,7 +189,7 @@
   )
 }
 
-#let work(title: "", company: "", location: "", dates: "", body: []) = {
+#let work(title: "", company: "", location: "", dates: "", body: [],font-size: 10pt) = {
   generic-two-by-two(
     top-left: strong(title),
     top-right: dates,
@@ -197,7 +200,8 @@
   if body != [] {
     v(-0.4em)
     set par(leading: 0.6em)
-    set list(indent: 0.5em)
+    set list(indent: 0.5em,spacing: 0.8em)
+    set text(font-size)
     for item in body [
       - #eval(item,mode: "markup")
     ]
@@ -212,6 +216,7 @@
   demo-url: "",
   tech-stack: [],
   body: [],
+  font-size: 10pt
 ) = {
   let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
   let right
@@ -232,6 +237,7 @@
     v(-0.4em)
     set par(leading: 0.6em)
     set list(indent: 0.5em)
+    set text(font-size)
     for item in body [
        - #eval(item,mode: "markup")
     ]

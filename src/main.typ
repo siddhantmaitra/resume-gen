@@ -8,6 +8,7 @@
 #let educations = details.education.degrees
 #let skills = details.skills
 #let projects = details.projects.list
+#let base_font_size = 11pt
 
 #let footer = [Generated on: #datetime.today().display()]
 
@@ -19,15 +20,15 @@
   phone: personal.phone,
   personal-site: personal.site,
   location: personal.location,
-  accent-color: "#101e70",
-  // accent-color: "#26429d",
+  // accent-color: "#101e70",
+  accent-color: "#26429d",
   font: "IBM Plex Serif",
-  // font: "New Computer Modern",
-  font-size: 12pt,
+  header-position: center,
+  name-size: 24pt,
+  contacts-size: base_font_size + 1pt,
+  font-size: base_font_size,
   paper: "a4",
-  header-position: left,
-  name-size: 22pt,
-  footer: footer,
+  // footer: footer,
 )
 
 == Work Experience
@@ -38,6 +39,7 @@
     location: exp.location,
     dates: lib.dates-helper(start-date: exp.start_date, end-date: exp.end_date),
     body: (exp.points),
+    font-size: base_font_size - 1pt,
   )
 ]
 
@@ -50,15 +52,22 @@
     demo-url: project.demo_url,
     code-url: project.code_url,
     body: project.points,
+    font-size: base_font_size - 0.5pt,
   )
 ]
 
 == Skills
-*Programming Languages*: #skills.programming_languages.join(", ")\
-*Frameworks*: #skills.frameworks.join(", ")\
-*Tools*: #skills.tools.join(", ")\
-*Platforms*: #skills.platforms.join(", ")
-// *Languages*: #skills.languages.join(", ")
+#{
+  set text(base_font_size)
+  [
+    *Programming Languages*: #skills.programming_languages.join(", ")\
+    *Frontend*: #skills.frontend.join(", ")\
+    *Backend*: #skills.backend.join(", ")\
+    *Tools*: #skills.tools.join(", ")\
+    *Platforms*: #skills.platforms.join(", ")
+  ]
+}
+
 
 == Education
 #for degree in educations [
@@ -73,5 +82,6 @@
     degree: degree.degree,
     consistent: true,
     emphDegree: false,
+    font-size: base_font_size - 0.5pt,
   )
 ]
