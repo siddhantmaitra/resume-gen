@@ -243,31 +243,3 @@
       [-  Tech Used: *#tech-stack.join(", ")*]
   }
 }
-
-
-
-
-#let certificates(
-  name: "",
-  issuer: "",
-  url: "",
-  date: "",
-) = {
-  [
-    *#name*, #issuer
-    #if url != "" {
-      [ (#link("https://" + url)[#url])]
-    }
-    #h(1fr) #date
-  ]
-}
-
-#let extracurriculars(
-  activity: "",
-  dates: "",
-) = {
-  generic-one-by-two(
-    left: strong(activity),
-    right: dates,
-  )
-}
