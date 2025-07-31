@@ -10,7 +10,7 @@
 #let projects = details.projects.list
 #let base_font_size = 11pt
 
-#let footer = [Generated on: #datetime.today().display()]
+#let footer = [#personal.name | #datetime.today().display()]
 
 #show: lib.resume.with(
   author: personal.name,
