@@ -15,8 +15,8 @@
   paper: "us-letter",
   body,
   footer: "",
-  font-size: 12pt,
-  name-size: 25pt,
+  font-size: 11pt,
+  name-size: 22pt,
   contacts-size: 12pt,
 ) = {
   // Sets document metadata
@@ -31,9 +31,9 @@
     ligatures: false,
   )
 
-  // Reccomended to have 0.5in margin on all sides
+  // Recommended to have 0.5in margin on all sides. Added the "rest" param to try fitting content in 1 page if needed
   set page(
-    margin: 0.5in,
+    margin: (top: 0.5in, rest: 0.5in),
     paper: paper,
     footer: [
       #if footer != "" {
@@ -41,16 +41,16 @@
         set text(8pt)
         footer
       }
-
     ],
   )
   // Link styles
   show link: underline
 
 
-  // Small caps for section titles
+  // Small caps for section titles. Size is relative to base font size
   show heading.where(level: 2): it => [
-    #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
+    #set text(font-size + 1pt)
+    #pad(top:-5pt, bottom: -12pt, [#smallcaps(it.body)])
     #line(length: 100%, stroke: (paint:gray ,thickness: 1pt))
   ]
 
@@ -92,7 +92,7 @@
 
   // Personal Info
   pad(
-    top: 0.25em,
+    top: 0.01em,
     align(header-position)[
       #set text(size: contacts-size)
       #{
@@ -105,7 +105,7 @@
           contact-item(github, link-type: "https://", link-text: "GitHub"),
           contact-item(linkedin, link-type: "https://", link-text: "Linkedin"),
         )
-        items.filter(x => x != none).join("  |  ")
+        items.filter(x => x != none).join(" | ")
       }
     ],
   )
@@ -189,18 +189,18 @@
 }
 
 #let work(title: "", company: "", location: "", dates: "", body: [],font-size: 10pt) = {
+  set text(font-size)
   generic-two-by-two(
     top-left: strong(title),
     top-right: dates,
-    bottom-left: company,
+    bottom-left: (company),
     bottom-right: emph(location),
   )
-  v(-0.2em)
+  v(0.1em)
   if body != [] {
     v(-0.4em)
     set par(leading: 0.6em)
-    set list(indent: 0.5em,spacing: 0.8em)
-    set text(font-size)
+    set list(indent: 0.2em,spacing: 0.8em)
     for item in body [
       - #eval(item,mode: "markup")
     ]
@@ -217,6 +217,7 @@
   body: [],
   font-size: 10pt
 ) = {
+  set text(font-size)
   let project-header = if role == "" { [*#name*] } else { [*#role*, #name] }
   let right
   if code-url != "" {
@@ -225,21 +226,18 @@
   }
   if demo-url != "" {
     // project-header = project-header + [ [#link(demo-url)[Demo]]]
-    right = right + [ [#link(demo-url)[Demo]]]
+    right = right + [ | [#link(demo-url)[Demo]]]
   }
-  generic-one-by-two(left: { project-header }, right: {right
-    //emph(tech-stack.join(", "))
-    })
+  generic-one-by-two(left: { project-header }, right: {right })
 
   v(-0.2em)
   if body != [] {
     v(-0.4em)
     set par(leading: 0.6em)
-    set list(indent: 0.5em)
-    set text(font-size)
+    set list(indent: 0.2em)
     for item in body [
        - #eval(item,mode: "markup")
     ]
-      [-  Tech Used: *#tech-stack.join(", ")*]
+      [- Tech Used: _#tech-stack.join(", ")_]
   }
 }
