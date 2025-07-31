@@ -49,7 +49,7 @@
 
   // Small caps for section titles. Size is relative to base font size
   show heading.where(level: 2): it => [
-    #set text(font-size + 1pt)
+    #set text(font-size + 2pt)
     #pad(top:-5pt, bottom: -12pt, [#smallcaps(it.body)])
     #line(length: 100%, stroke: (paint:gray ,thickness: 1pt))
   ]

@@ -24,10 +24,10 @@
   accent-color: "#26429d",
   font: "IBM Plex Serif",
   header-position: center,
-  name-size: 24pt,
-  contacts-size: base_font_size + 1pt,
+  name-size: (base_font_size+1pt)*2,
+  contacts-size: base_font_size+1pt,
   font-size: base_font_size,
-  paper: "a4",
+  paper: "a4", // "uk-foolscap"
   // footer: footer,
 )
 
@@ -39,7 +39,7 @@
     location: exp.location,
     dates: lib.dates-helper(start-date: exp.start_date, end-date: exp.end_date),
     body: (exp.points),
-    font-size: base_font_size - 1pt,
+    font-size: base_font_size
   )
 ]
 
@@ -52,7 +52,7 @@
     demo-url: project.demo_url,
     code-url: project.code_url,
     body: project.points,
-    font-size: base_font_size - 0.5pt,
+    font-size: base_font_size
   )
 ]
 
@@ -81,7 +81,6 @@
     ),
     degree: degree.degree,
     consistent: true,
-    emphDegree: false,
-    font-size: base_font_size - 0.5pt,
+    font-size: base_font_size,
   )
 ]
