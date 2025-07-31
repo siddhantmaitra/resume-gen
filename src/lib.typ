@@ -156,7 +156,6 @@
   location: "",
   // Makes dates on upper right like rest of components
   consistent: false,
-  emphDegree: true,
   font-size: 12pt,
 ) = {
   set text(font-size)
@@ -164,10 +163,10 @@
 
   eduData.top-left = strong(institution)
 
-  eduData.bottom-left = if emphDegree {
-    emph(degree) + (" " + strong(gpa))
+  eduData.bottom-left = if gpa !="" {
+    emph(degree) + (" GPA: " + strong(gpa))
   } else {
-    degree + " " + strong(gpa)
+    degree
   }
 
   if consistent {
