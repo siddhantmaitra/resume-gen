@@ -1,6 +1,6 @@
 #import "lib.typ" as lib
 
-#let details = toml(sys.inputs.at("data",default:"../data/sample.data.toml"))
+#let details = toml(sys.inputs.at("data",default:"../data/sample.toml"))
 
 #let work_exps = details.work_experience.jobs
 #let personal = details.personal

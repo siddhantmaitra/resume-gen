@@ -18,7 +18,7 @@
         "commit=$(git log -1 --format=%h)",
         "buildDate=$(date +%y-%m-%d)",
         "name=${1:-JohnDoe}",
-        "data=\"../data/${2:-sample.data.toml}\"",
+        "data=\"../data/${2:-sample.toml}\"",
         "typst compile --root . src/main.typ --input data=${data} output/Resume_${name}_${buildDate}.pdf"
       ]
     }

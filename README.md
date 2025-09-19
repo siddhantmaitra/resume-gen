@@ -12,6 +12,6 @@ This is a fork of [basic-resume](https://typst.app/universe/package/basic-resume
 5. Run `devbox run fmt-all` for formatting `src/*.typ` files
 
 ## Creating a PDF 
-1. Create a `.toml` file referencing `sample.data.toml` in `/data`
+1. Create a `.toml` file referencing `sample.toml` in `/data`
 2. If using devbox, run `devbox run build $AUTHOR_NAME $FILE_NAME`.
 3. If using typst CLI, run in project root: `typst compile --root . src/main.typ --input data=$FILE_NAME output/Resume_${AUTHOR_NAME}.pdf`
