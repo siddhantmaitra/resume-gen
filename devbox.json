@@ -11,14 +11,14 @@
       "unset SOURCE_DATE_EPOCH"
     ],
     "scripts": {
-      "server": "typst-live src/main.typ --port \"6752\" --root .",
+      "server": "typst-live src/main.typ --port \"6752\" --root . --input data=\"../data/${1:-sample.toml}\"",
       "fmt-all": "typstyle format-all src",
       "build": [
         "mkdir -p output",
         "commit=$(git log -1 --format=%h)",
         "buildDate=$(date +%y-%m-%d)",
-        "name=${1:-JohnDoe}",
-        "data=\"../data/${2:-sample.toml}\"",
+        "name=${2:-JohnDoe}",
+        "data=\"../data/${1:-sample.toml}\"",
         "typst compile --root . src/main.typ --input data=${data} output/Resume_${name}_${buildDate}.pdf"
       ]
     }
